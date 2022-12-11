@@ -1,0 +1,51 @@
+<html lang="en">
+<title>Available products</title>
+
+<body>
+  <p>Products page</p>
+
+  {% block content %}
+
+  {% if user.is_authenticated %}
+  Hi {{ user.username }} user!
+  {% endif %}
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price </th>
+        </tr>
+      </thead>
+      <tfoot>
+
+      </tfoot>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <!-- <th>1</th> -->
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+  {% if user.is_superuser %}
+  <div>
+    <a href="{% url 'store:admin_page' %}">Admin only page</a>
+  </div>
+  {% endif %}
+
+
+  {% if user.is_authenticated %}
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+  {% endif %}
+
+  {% endblock %}
+</body>
+
+</html>

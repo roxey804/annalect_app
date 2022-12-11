@@ -1,0 +1,10 @@
+<html lang="en">
+
+<body>
+    {% if user.is_superuser %}
+    <h2>This content is visible to admin users only</h2>
+    {% endif %}
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+</body>
+
+</html>
