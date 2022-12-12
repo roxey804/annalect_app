@@ -2,8 +2,11 @@
 
 <body>
     {% if user.is_superuser %}
-    <h2>This content is visible to admin users only</h2>
+    <h2>Since you are an admin, you can view this page :)</h2>
+    {% else %}
+    <p>Sorry, this content is available to admin only</p>
     {% endif %}
+
     <p><a href="{% url 'logout' %}">Log Out</a></p>
 </body>
 
