@@ -13,8 +13,8 @@ Any comments and pull request testing criteria
 2. Access login page  http://localhost:8000/
 
 There are 2 user accounts you can login with: 
-**admin/superuser:** u:root p:root
-**standard user** u:test p:pwd
+**admin/superuser:** ```u:root p:root``` or 
+**standard user** ```u:test p:pwd```
 
 Pages:
 - Login page http://localhost:8000/
